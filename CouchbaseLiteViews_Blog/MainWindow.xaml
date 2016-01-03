@@ -1,0 +1,33 @@
+﻿<Window x:Class="CouchbaseLiteViews_Blog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CouchbaseLiteViews_Blog"
+        mc:Ignorable="d"
+        Title="CouchbaseLite Working with views" Height="285.808" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="0" Margin="0 10 0 0">
+            <Button Content="Insert" Click="InsertDocumentClick" />
+            <Button Content="Read" Click="GetDocumentClick" />
+            <Button Content="InsertSomeData!" Click="InsertSomeDataClick" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Margin="0 10 0 0">
+            <TextBox Text="{Binding DocumentId}" Margin="1"/>
+            <TextBox Text="{Binding DocumentText}" TextWrapping="Wrap" AcceptsReturn="True" Height="190" VerticalScrollBarVisibility="Visible"/> 
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Margin="0 10 0 0" Orientation="Horizontal">
+            <Button Content="GetDocument" Width="100" Margin="1" Click="GetByCityClick"/>
+            <TextBox Text="{Binding City}" Width="100"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
